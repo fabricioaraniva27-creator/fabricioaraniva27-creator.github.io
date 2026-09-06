@@ -1,545 +1,316 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Actividad Integradora | Sistema de riego para cultivos de maíz</title>
-
-<style>
-
-/* =========================
-   GENERAL
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
-    color: white;
-
-    background:
-        linear-gradient(
-            rgba(3, 22, 14, 0.35),
-            rgba(3, 25, 16, 0.88)
-        ),
-        url("fondo-maiz.png") center center / cover fixed;
-}
-
-
-/* =========================
-   ENCABEZADO
-========================= */
-
-header {
-    width: 100%;
-    padding: 25px 6%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-}
-
-.header-left {
-    font-size: 12px;
-    letter-spacing: 3px;
-    color: rgba(255,255,255,0.85);
-}
-
-.header-right {
-    font-size: 12px;
-    letter-spacing: 4px;
-    color: #c5f59c;
-}
-
-
-/* =========================
-   CONTENIDO
-========================= */
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 65px 20px 35px;
-
-    text-align: center;
-}
-
-
-/* =========================
-   ACTIVIDAD INTEGRADORA
-========================= */
-
-.activity {
-    display: inline-block;
-
-    padding: 9px 20px;
-
-    margin-bottom: 25px;
-
-    border: 1px solid rgba(197,245,156,0.55);
-
-    border-radius: 30px;
-
-    color: #c5f59c;
-
-    font-size: 12px;
-
-    letter-spacing: 4px;
-
-    font-weight: 600;
-}
-
-
-/* =========================
-   TÍTULO
-========================= */
-
-h1 {
-    max-width: 1100px;
-
-    margin: 0 auto 22px;
-
-    font-size: clamp(30px, 4.5vw, 56px);
-
-    line-height: 1.15;
-
-    font-weight: 700;
-
-    text-shadow:
-        0 5px 25px rgba(0,0,0,0.6);
-}
-
-
-/* =========================
-   SUBTÍTULO
-========================= */
-
-.subtitle {
-    max-width: 900px;
-
-    margin: auto auto 45px;
-
-    font-size: clamp(18px, 2vw, 25px);
-
-    line-height: 1.5;
-
-    color: rgba(255,255,255,0.92);
-}
-
-.subtitle strong {
-    color: #ffffff;
-}
-
-
-/* =========================
-   REPRODUCTOR
-========================= */
-
-.player {
-    width: min(920px, 96%);
-
-    margin: auto;
-
-    padding: 18px;
-
-    background: rgba(2,20,13,0.88);
-
-    border: 1px solid rgba(197,245,156,0.35);
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.45);
-}
-
-
-/* =========================
-   VIDEO
-========================= */
-
-.video-container {
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    overflow: hidden;
-
-    border-radius: 13px;
-
-    background: #050505;
-}
-
-.video-container iframe {
-    width: 100%;
-    height: 100%;
-
-    border: none;
-}
-
-
-/* =========================
-   BOTÓN ME GUSTA
-========================= */
-
-.like-container {
-    display: flex;
-
-    justify-content: center;
-
-    margin-top: 20px;
-}
-
-.like-btn {
-    background: rgba(255,255,255,0.06);
-
-    color: white;
-
-    border: 1px solid rgba(197,245,156,0.35);
-
-    border-radius: 25px;
-
-    padding: 10px 22px;
-
-    font-size: 11px;
-
-    letter-spacing: 1.5px;
-
-    cursor: pointer;
-
-    transition: 0.25s ease;
-}
-
-.like-btn:hover {
-    background: rgba(197,245,156,0.15);
-
-    border-color: #c5f59c;
-
-    transform: translateY(-2px);
-}
-
-.like-btn.active {
-    background: #c5f59c;
-
-    color: #102416;
-
-    border-color: #c5f59c;
-}
-
-
-/* =========================
-   FRASE
-========================= */
-
-.slogan {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 20px;
-
-    margin-top: 50px;
-
-    color: #c5f59c;
-
-    font-size: 11px;
-
-    letter-spacing: 4px;
-
-    font-weight: 600;
-}
-
-.slogan::before,
-.slogan::after {
-    content: "";
-
-    width: 60px;
-
-    height: 1px;
-
-    background: #c5f59c;
-}
-
-
-/* =========================
-   DERECHOS
-========================= */
-
-.copyright {
-    margin-top: 35px;
-
-    padding-bottom: 25px;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    color: rgba(255,255,255,0.65);
-}
-
-
-/* =========================
-   TELÉFONO
-========================= */
-
-@media (max-width: 700px) {
-
-    header {
-        padding: 18px 20px;
-    }
-
-    .header-left {
-        font-size: 8px;
-        letter-spacing: 1.5px;
-    }
-
-    .header-right {
-        font-size: 9px;
-        letter-spacing: 2px;
-    }
-
-    .container {
-        padding-top: 45px;
-    }
-
-    .activity {
-        font-size: 9px;
-
-        letter-spacing: 2.5px;
-
-        padding: 8px 15px;
-    }
-
-    h1 {
-        font-size: 29px;
-    }
-
-    .subtitle {
-        font-size: 17px;
-
-        margin-bottom: 30px;
-    }
-
-    .player {
-        width: 96%;
-
-        padding: 12px;
-
-        border-radius: 16px;
-    }
-
-    .like-btn {
-        padding: 9px 18px;
-
-        font-size: 9px;
-    }
-
-    .slogan {
-        font-size: 8px;
-
-        letter-spacing: 2px;
-
-        gap: 10px;
-    }
-
-    .slogan::before,
-    .slogan::after {
-        width: 25px;
-    }
-
-    .copyright {
-        font-size: 8px;
-
-        line-height: 1.6;
-    }
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad Integradora | Sistema de riego para cultivos de maíz</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            min-height: 100vh;
+            background:
+                linear-gradient(
+                    rgba(8, 35, 20, 0.68),
+                    rgba(8, 35, 20, 0.78)
+                ),
+                url("fondo-maiz.png") center center / cover fixed no-repeat;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1150px;
+            margin: auto;
+            padding: 35px 0 25px;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 55px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .categories {
+            opacity: 0.9;
+        }
+
+        .podcast {
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 9px 18px;
+            border-radius: 30px;
+        }
+
+        /* CONTENIDO */
+
+        .intro {
+            max-width: 950px;
+            margin-bottom: 35px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 9px 17px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.13);
+            border: 1px solid rgba(255,255,255,0.35);
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-size: clamp(32px, 5vw, 62px);
+            line-height: 1.08;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+        }
+
+        .subtitle {
+            font-size: clamp(18px, 2.5vw, 26px);
+            color: rgba(255,255,255,0.88);
+            font-weight: 400;
+        }
+
+        /* VIDEO */
+
+        .video-section {
+            margin-top: 35px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* BOTÓN ME GUSTA */
+
+        .like-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 22px;
+        }
+
+        .like-button {
+            background: rgba(255,255,255,0.12);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .like-button:hover {
+            background: rgba(255,255,255,0.22);
+            transform: translateY(-2px);
+        }
+
+        .like-button.liked {
+            background: rgba(255,255,255,0.28);
+        }
+
+        /* FRASE */
+
+        .slogan {
+            text-align: center;
+            margin: 55px 0 35px;
+            font-size: 14px;
+            letter-spacing: 4px;
+            font-weight: bold;
+            opacity: 0.85;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            .container {
+                width: 90%;
+                padding-top: 25px;
+            }
+
+            header {
+                margin-bottom: 40px;
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .podcast {
+                padding: 7px 12px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .video-container {
+                border-radius: 12px;
+            }
+
+            .slogan {
+                margin-top: 40px;
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <div class="container">
 
-<!-- =========================
-     ENCABEZADO
-========================= -->
+        <!-- ENCABEZADO -->
 
-<header>
+        <header>
+            <div class="categories">
+                AGRICULTURA · INNOVACIÓN · SOSTENIBILIDAD
+            </div>
 
-    <div class="header-left">
-        AGRICULTURA · INNOVACIÓN · SOSTENIBILIDAD
-    </div>
-
-    <div class="header-right">
-        PODCAST
-    </div>
-
-</header>
+            <div class="podcast">
+                PODCAST
+            </div>
+        </header>
 
 
+        <!-- TÍTULO -->
 
-<!-- =========================
-     CONTENIDO
-========================= -->
+        <section class="intro">
 
-<main class="container">
+            <div class="label">
+                ACTIVIDAD INTEGRADORA
+            </div>
 
+            <h1>
+                Aplicación PMI a un proyecto elaborado /
+                Formulación de informe ejecutivo /
+                Socializar resultados PMI/GPA
+            </h1>
 
-    <!-- ACTIVIDAD -->
+            <div class="subtitle">
+                Sistema de riego para cultivos de maíz
+            </div>
 
-    <div class="activity">
-        ACTIVIDAD INTEGRADORA
-    </div>
-
-
-    <!-- TÍTULO COMPLETO -->
-
-    <h1>
-
-        Aplicación PMI a un proyecto elaborado /
-        Formulación de informe ejecutivo /
-        Socializar resultados PMI/GPA
-
-    </h1>
+        </section>
 
 
-    <!-- TEMA -->
+        <!-- VIDEO -->
 
-    <div class="subtitle">
+        <section class="video-section">
 
-        Sistema de riego para cultivos de maíz
+            <div class="video-container">
 
-    </div>
+                <iframe
+                    src="https://www.youtube.com/embed/c46MfMDlB2k"
+                    title="Sistema de riego para cultivos de maíz"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
 
 
+            <!-- ME GUSTA -->
 
-    <!-- =========================
-         VIDEO
-    ========================= -->
+            <div class="like-container">
 
-    <section class="player">
+                <button
+                    class="like-button"
+                    id="likeButton"
+                    onclick="darLike()">
+
+                    ME GUSTA
+
+                </button>
+
+            </div>
+
+        </section>
 
 
-        <div class="video-container">
+        <!-- FRASE -->
 
-            <!--
-            CUANDO TENGAS EL VIDEO DE YOUTUBE,
-            CAMBIA VIDEO_ID POR EL ID DEL VIDEO.
-
-            Ejemplo:
-
-            https://youtu.be/c46MfMDlB2k?si=HdHxY1DtYZe7xqXs
-           
-            quedaría:
-
-           https://youtu.be/c46MfMDlB2k?si=HdHxY1DtYZe7xqXs 
-           
-           -->
-
-            <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID"
-                title="Actividad Integradora"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-
+        <div class="slogan">
+            EL AGUA TAMBIÉN ES CULTIVO
         </div>
 
 
+        <!-- COPYRIGHT -->
 
-        <!-- =========================
-             ME GUSTA
-        ========================= -->
-
-        <div class="like-container">
-
-            <button
-                class="like-btn"
-                onclick="toggleLike(this)">
-
-                ♡ ME GUSTA
-
-            </button>
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         FRASE
-    ========================= -->
-
-    <div class="slogan">
-
-        EL AGUA TAMBIÉN ES CULTIVO
+        <footer>
+            © 2026 WILDER FABRICIO ARANIVA FUENTES · TODOS LOS DERECHOS RESERVADOS
+        </footer>
 
     </div>
 
 
+    <!-- FUNCION DEL BOTÓN -->
 
-    <!-- =========================
-         DERECHOS
-    ========================= -->
+    <script>
 
-    <div class="copyright">
+        function darLike() {
 
-        © 2026 WILDER FABRICIO ARANIVA FUENTES ·
-        TODOS LOS DERECHOS RESERVADOS
+            const boton = document.getElementById("likeButton");
 
-    </div>
+            boton.classList.toggle("liked");
 
+            if (boton.classList.contains("liked")) {
+                boton.textContent = "ME GUSTA ✓";
+            } else {
+                boton.textContent = "ME GUSTA";
+            }
 
-</main>
+        }
 
-
-
-<!-- =========================
-     FUNCIÓN ME GUSTA
-========================= -->
-
-<script>
-
-function toggleLike(button) {
-
-    button.classList.toggle("active");
-
-    if (button.classList.contains("active")) {
-
-        button.innerHTML = "♥ ME GUSTA";
-
-    } else {
-
-        button.innerHTML = "♡ ME GUSTA";
-
-    }
-
-}
-
-</script>
-
+    </script>
 
 </body>
 </html>
