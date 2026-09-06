@@ -10,7 +10,7 @@
 <style>
 
 /* =========================
-   CONFIGURACIÓN GENERAL
+   GENERAL
 ========================= */
 
 * {
@@ -24,14 +24,8 @@ html {
 }
 
 body {
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-
     color: white;
 
     background:
@@ -39,9 +33,7 @@ body {
             rgba(3, 22, 14, 0.35),
             rgba(3, 25, 16, 0.88)
         ),
-        url("fondo-maiz.png")
-        center center / cover fixed;
-
+        url("fondo-maiz.png") center center / cover fixed;
 }
 
 
@@ -50,44 +42,26 @@ body {
 ========================= */
 
 header {
-
     width: 100%;
-
     padding: 25px 6%;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.12);
-
+    border-bottom: 1px solid rgba(255,255,255,0.12);
 }
-
 
 .header-left {
-
     font-size: 12px;
-
     letter-spacing: 3px;
-
-    color:
-        rgba(255,255,255,0.85);
-
+    color: rgba(255,255,255,0.85);
 }
 
-
 .header-right {
-
     font-size: 12px;
-
     letter-spacing: 4px;
-
     color: #c5f59c;
-
 }
 
 
@@ -96,37 +70,29 @@ header {
 ========================= */
 
 .container {
-
     width: 100%;
-
-    max-width: 1150px;
+    max-width: 1200px;
 
     margin: auto;
 
-    padding:
-        70px 20px 35px;
+    padding: 65px 20px 35px;
 
     text-align: center;
-
 }
 
 
 /* =========================
-   ETIQUETA PRINCIPAL
+   ACTIVIDAD INTEGRADORA
 ========================= */
 
 .activity {
-
     display: inline-block;
 
-    padding:
-        9px 20px;
+    padding: 9px 20px;
 
     margin-bottom: 25px;
 
-    border:
-        1px solid
-        rgba(197,245,156,0.55);
+    border: 1px solid rgba(197,245,156,0.55);
 
     border-radius: 30px;
 
@@ -137,7 +103,6 @@ header {
     letter-spacing: 4px;
 
     font-weight: 600;
-
 }
 
 
@@ -146,103 +111,39 @@ header {
 ========================= */
 
 h1 {
+    max-width: 1100px;
 
-    max-width: 1000px;
+    margin: 0 auto 22px;
 
-    margin:
-        0 auto 18px;
+    font-size: clamp(30px, 4.5vw, 56px);
 
-    font-size:
-        clamp(32px, 5vw, 58px);
-
-    line-height: 1.12;
+    line-height: 1.15;
 
     font-weight: 700;
 
     text-shadow:
-        0 5px 25px
-        rgba(0,0,0,0.6);
-
-}
-
-
-.subtitle {
-
-    max-width: 800px;
-
-    margin:
-        auto auto 45px;
-
-    font-size:
-        clamp(18px, 2vw, 25px);
-
-    color:
-        rgba(255,255,255,0.92);
-
-    font-weight: 300;
-
+        0 5px 25px rgba(0,0,0,0.6);
 }
 
 
 /* =========================
-   VIDEO
+   SUBTÍTULO
 ========================= */
 
-.player {
+.subtitle {
+    max-width: 900px;
 
-    width: min(920px, 96%);
+    margin: auto auto 45px;
 
-    margin: auto;
+    font-size: clamp(18px, 2vw, 25px);
 
-    padding: 24px;
+    line-height: 1.5;
 
-    background:
-        rgba(2, 20, 13, 0.88);
-
-    border:
-        1px solid
-        rgba(197,245,156,0.35);
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,0.45);
-
+    color: rgba(255,255,255,0.92);
 }
 
-
-.player-header {
-
-    text-align: left;
-
-    margin-bottom: 18px;
-
-}
-
-
-.player-label {
-
-    color: #c5f59c;
-
-    font-size: 11px;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 7px;
-
-}
-
-
-.player-title {
-
-    font-size: 17px;
-
-    line-height: 1.4;
-
-    color:
-        rgba(255,255,255,0.9);
-
+.subtitle strong {
+    color: #ffffff;
 }
 
 
@@ -250,8 +151,29 @@ h1 {
    REPRODUCTOR
 ========================= */
 
-.video-container {
+.player {
+    width: min(920px, 96%);
 
+    margin: auto;
+
+    padding: 18px;
+
+    background: rgba(2,20,13,0.88);
+
+    border: 1px solid rgba(197,245,156,0.35);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.45);
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-container {
     width: 100%;
 
     aspect-ratio: 16 / 9;
@@ -261,57 +183,38 @@ h1 {
     border-radius: 13px;
 
     background: #050505;
-
 }
 
-
 .video-container iframe {
-
     width: 100%;
-
     height: 100%;
 
     border: none;
-
 }
 
 
 /* =========================
-   BOTONES
+   BOTÓN ME GUSTA
 ========================= */
 
-.reviews {
-
+.like-container {
     display: flex;
 
     justify-content: center;
 
-    align-items: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-
-    margin-top: 22px;
-
+    margin-top: 20px;
 }
 
-
-.review-btn {
-
-    background:
-        rgba(255,255,255,0.06);
+.like-btn {
+    background: rgba(255,255,255,0.06);
 
     color: white;
 
-    border:
-        1px solid
-        rgba(197,245,156,0.35);
+    border: 1px solid rgba(197,245,156,0.35);
 
     border-radius: 25px;
 
-    padding:
-        10px 20px;
+    padding: 10px 22px;
 
     font-size: 11px;
 
@@ -319,34 +222,23 @@ h1 {
 
     cursor: pointer;
 
-    transition:
-        0.25s ease;
-
+    transition: 0.25s ease;
 }
 
+.like-btn:hover {
+    background: rgba(197,245,156,0.15);
 
-.review-btn:hover {
+    border-color: #c5f59c;
 
-    background:
-        rgba(197,245,156,0.15);
-
-    border-color:
-        #c5f59c;
-
-    transform:
-        translateY(-2px);
-
+    transform: translateY(-2px);
 }
 
-
-.review-btn.active {
-
+.like-btn.active {
     background: #c5f59c;
 
     color: #102416;
 
     border-color: #c5f59c;
-
 }
 
 
@@ -355,7 +247,6 @@ h1 {
 ========================= */
 
 .slogan {
-
     display: flex;
 
     justify-content: center;
@@ -364,7 +255,7 @@ h1 {
 
     gap: 20px;
 
-    margin-top: 55px;
+    margin-top: 50px;
 
     color: #c5f59c;
 
@@ -373,13 +264,10 @@ h1 {
     letter-spacing: 4px;
 
     font-weight: 600;
-
 }
-
 
 .slogan::before,
 .slogan::after {
-
     content: "";
 
     width: 60px;
@@ -387,7 +275,6 @@ h1 {
     height: 1px;
 
     background: #c5f59c;
-
 }
 
 
@@ -396,7 +283,6 @@ h1 {
 ========================= */
 
 .copyright {
-
     margin-top: 35px;
 
     padding-bottom: 25px;
@@ -405,9 +291,7 @@ h1 {
 
     letter-spacing: 2px;
 
-    color:
-        rgba(255,255,255,0.65);
-
+    color: rgba(255,255,255,0.65);
 }
 
 
@@ -418,117 +302,72 @@ h1 {
 @media (max-width: 700px) {
 
     header {
-
-        padding:
-            18px 20px;
-
+        padding: 18px 20px;
     }
-
 
     .header-left {
-
-        font-size: 9px;
-
-        letter-spacing: 2px;
-
+        font-size: 8px;
+        letter-spacing: 1.5px;
     }
-
 
     .header-right {
-
         font-size: 9px;
-
         letter-spacing: 2px;
-
     }
-
 
     .container {
-
         padding-top: 45px;
-
     }
 
-
     .activity {
-
         font-size: 9px;
 
         letter-spacing: 2.5px;
 
-        padding:
-            8px 15px;
-
+        padding: 8px 15px;
     }
-
 
     h1 {
-
-        font-size: 30px;
-
+        font-size: 29px;
     }
 
-
     .subtitle {
-
         font-size: 17px;
 
         margin-bottom: 30px;
-
     }
-
 
     .player {
+        width: 96%;
 
-        padding: 15px;
+        padding: 12px;
 
         border-radius: 16px;
-
     }
 
-
-    .player-title {
-
-        font-size: 14px;
-
-    }
-
-
-    .review-btn {
-
-        padding:
-            9px 14px;
+    .like-btn {
+        padding: 9px 18px;
 
         font-size: 9px;
-
     }
 
-
     .slogan {
-
         font-size: 8px;
 
         letter-spacing: 2px;
 
         gap: 10px;
-
     }
-
 
     .slogan::before,
     .slogan::after {
-
         width: 25px;
-
     }
 
-
     .copyright {
-
         font-size: 8px;
 
         line-height: 1.6;
-
     }
 
 }
@@ -560,82 +399,65 @@ h1 {
 
 
 <!-- =========================
-     CONTENIDO PRINCIPAL
+     CONTENIDO
 ========================= -->
 
 <main class="container">
 
+
+    <!-- ACTIVIDAD -->
 
     <div class="activity">
         ACTIVIDAD INTEGRADORA
     </div>
 
 
+    <!-- TÍTULO COMPLETO -->
+
     <h1>
-        Aplicación PMI a un proyecto elaborado
-    </h1>
 
-
-    <div class="subtitle">
-
+        Aplicación PMI a un proyecto elaborado /
         Formulación de informe ejecutivo /
         Socializar resultados PMI/GPA
 
-        <br><br>
+    </h1>
 
-        <strong>
-            Sistema de riego para cultivos de maíz
-        </strong>
+
+    <!-- TEMA -->
+
+    <div class="subtitle">
+
+        Sistema de riego para cultivos de maíz
 
     </div>
 
 
 
     <!-- =========================
-         REPRODUCTOR
+         VIDEO
     ========================= -->
 
     <section class="player">
 
 
-        <div class="player-header">
-
-            <div class="player-label">
-                PODCAST
-            </div>
-
-            <div class="player-title">
-
-                Aplicación PMI a un proyecto elaborado ·
-                Formulación de informe ejecutivo ·
-                Socializar resultados PMI/GPA
-
-            </div>
-
-        </div>
-
-
-
         <div class="video-container">
 
             <!--
-            CUANDO TENGAS EL VIDEO:
-
-            Cambia VIDEO_ID por el ID
-            de tu video de YouTube.
+            CUANDO TENGAS EL VIDEO DE YOUTUBE,
+            CAMBIA VIDEO_ID POR EL ID DEL VIDEO.
 
             Ejemplo:
 
             https://www.youtube.com/watch?v=ABC123
 
-            Se convierte en:
+            quedaría:
 
             https://www.youtube.com/embed/ABC123
             -->
 
             <iframe
                 src="https://www.youtube.com/embed/VIDEO_ID"
-                title="Actividad Integradora - Sistema de riego para cultivos de maíz"
+                title="Actividad Integradora"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
             </iframe>
@@ -645,43 +467,16 @@ h1 {
 
 
         <!-- =========================
-             VALORACIÓN
+             ME GUSTA
         ========================= -->
 
-        <div class="reviews">
+        <div class="like-container">
 
             <button
-                class="review-btn"
+                class="like-btn"
                 onclick="toggleLike(this)">
 
                 ♡ ME GUSTA
-
-            </button>
-
-
-            <button
-                class="review-btn"
-                onclick="toggleReview(this)">
-
-                ☆ RESEÑA
-
-            </button>
-
-
-            <button
-                class="review-btn"
-                onclick="selectReview(this)">
-
-                EXCELENTE
-
-            </button>
-
-
-            <button
-                class="review-btn"
-                onclick="selectReview(this)">
-
-                MUY BUENO
 
             </button>
 
@@ -721,7 +516,7 @@ h1 {
 
 
 <!-- =========================
-     FUNCIONES
+     FUNCIÓN ME GUSTA
 ========================= -->
 
 <script>
@@ -739,46 +534,6 @@ function toggleLike(button) {
         button.innerHTML = "♡ ME GUSTA";
 
     }
-
-}
-
-
-function toggleReview(button) {
-
-    button.classList.toggle("active");
-
-    if (button.classList.contains("active")) {
-
-        button.innerHTML = "★ RESEÑA";
-
-    } else {
-
-        button.innerHTML = "☆ RESEÑA";
-
-    }
-
-}
-
-
-function selectReview(button) {
-
-    const buttons =
-        document.querySelectorAll(".review-btn");
-
-    buttons.forEach(function(btn) {
-
-        if (
-            btn.innerHTML.includes("EXCELENTE") ||
-            btn.innerHTML.includes("MUY BUENO")
-        ) {
-
-            btn.classList.remove("active");
-
-        }
-
-    });
-
-    button.classList.add("active");
 
 }
 
