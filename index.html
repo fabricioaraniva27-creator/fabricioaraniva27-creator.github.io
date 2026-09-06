@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Podcast | Sistema de riego para cultivos de maíz</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            color: white;
+            background:
+                linear-gradient(rgba(7, 25, 12, 0.78), rgba(7, 25, 12, 0.90)),
+                radial-gradient(circle at 50% 10%, #4d7c35, #102b17 55%, #061009);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 18px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .top {
+            margin-bottom: 25px;
+        }
+
+        .podcast {
+            font-size: 14px;
+            letter-spacing: 5px;
+            font-weight: bold;
+            color: #b8e986;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(28px, 5vw, 55px);
+            line-height: 1.12;
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: clamp(18px, 2.5vw, 25px);
+            color: #d7e8cf;
+            margin-bottom: 35px;
+        }
+
+        .corn-line {
+            width: 90px;
+            height: 3px;
+            background: #a8d86e;
+            margin: 0 auto 28px;
+            border-radius: 10px;
+        }
+
+        .video-box {
+            width: 100%;
+            background: rgba(3, 15, 7, 0.88);
+            border: 1px solid rgba(190, 235, 145, 0.25);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.55);
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16 / 9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .play {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: #b7df7e;
+            color: #17351b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 35px rgba(183,223,126,0.25);
+        }
+
+        .placeholder-title {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .placeholder-text {
+            color: #b9c9b5;
+            font-size: 16px;
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: block;
+            border: none;
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            color: #cfe3c6;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .icon {
+            font-size: 25px;
+            margin-bottom: 7px;
+        }
+
+        footer {
+            margin-top: 35px;
+            color: #91a88d;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .info {
+                gap: 25px;
+            }
+
+            .video-box {
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="top">
+
+            <div class="podcast">
+                🎙️ PODCAST
+            </div>
+
+            <div class="corn-line"></div>
+
+            <h1>
+                Aplicación PMI a un proyecto elaborado /
+                Formulación de informe ejecutivo /
+                Socializar resultados PMI/GPA
+            </h1>
+
+            <p class="subtitle">
+                🌽 Sistema de riego para cultivos de maíz
+            </p>
+
+        </div>
+
+        <div class="video-box">
+
+            <!--
+            ==================================================
+            VIDEO DE YOUTUBE
+            ==================================================
+
+            CUANDO TENGAS EL VIDEO FINAL:
+
+            1. Súbelo a YouTube.
+            2. Copia el ID del video.
+
+            Ejemplo:
+            https://www.youtube.com/watch?v=ABC123XYZ
+
+            El ID sería:
+            ABC123XYZ
+
+            3. Reemplaza el contenido de VIDEO_ID aquí abajo.
+
+            ==================================================
+            -->
+
+            <div id="videoContainer">
+
+                <div class="video-placeholder">
+
+                    <div class="play">
+                        ▶
+                    </div>
+
+                    <div class="placeholder-title">
+                        Video del proyecto
+                    </div>
+
+                    <div class="placeholder-text">
+                        El contenido audiovisual estará disponible próximamente.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="info">
+
+            <div class="info-item">
+                <div class="icon">🌱</div>
+                PROYECTO
+            </div>
+
+            <div class="info-item">
+                <div class="icon">💧</div>
+                SISTEMA DE RIEGO
+            </div>
+
+            <div class="info-item">
+                <div class="icon">🌽</div>
+                CULTIVO DE MAÍZ
+            </div>
+
+            <div class="info-item">
+                <div class="icon">📊</div>
+                PMI / GPA
+            </div>
+
+        </div>
+
+        <footer>
+            PROYECTO ACADÉMICO · PODCAST
+        </footer>
+
+    </div>
+
+    <script>
+
+        /*
+        ======================================================
+        CUANDO TENGAS TU VIDEO DE YOUTUBE:
+
+        Cambia solamente lo que está entre comillas.
+
+        Ejemplo:
+
+        const VIDEO_ID = "ABC123XYZ";
+
+        ======================================================
+        */
+
+        const VIDEO_ID = "";
+
+        const videoContainer =
+            document.getElementById("videoContainer");
+
+        if (VIDEO_ID !== "") {
+
+            videoContainer.innerHTML = `
+                <iframe
+                    src="https://www.youtube.com/embed/${VIDEO_ID}"
+                    title="Podcast - Sistema de riego para cultivos de maíz"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            `;
+
+        }
+
+    </script>
+
+</body>
+</html>
